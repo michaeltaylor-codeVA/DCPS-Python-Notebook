@@ -15,31 +15,6 @@ Students open the site in a web browser. Nothing is installed on their computers
 | `jupyter-lite.json` | Site settings: opens in the Jupyter Notebook interface and names the site. |
 | `requirements.txt` | Pinned build tool versions. |
 
-## Publish the site (one time, about 15 minutes)
-
-1. **Create the repository.** In GitHub, under the CodeVA organization, choose **New repository**. Name it (for example `dcps-data-science`). Make it **Public** (GitHub Pages on private repositories requires a paid GitHub plan). Do not add a README.
-2. **Upload the files.** On the new repository's page, choose **uploading an existing file**, then drag in `content`, `scripts`, `jupyter-lite.json`, `requirements.txt`, `README.md`, and `.gitignore`. Choose **Commit changes**.
-3. **Add the workflow file.** Folders starting with a dot are often hidden and skipped when dragging, so create this one directly: choose **Add file > Create new file**, type the name `.github/workflows/deploy.yml`, paste in the contents of the `deploy.yml` file from this package, and choose **Commit changes**.
-4. **Turn on GitHub Pages.** Go to **Settings > Pages**. Under **Build and deployment > Source**, choose **GitHub Actions**.
-5. **Wait for the first build.** Open the **Actions** tab. The run named *Build and publish the JupyterLite site* takes about 3 to 5 minutes. When it shows a green check, the site is live at:
-
-   `https://<organization>.github.io/<repository-name>/`
-
-   This is the address that goes into the lesson plans wherever they say `{JUPYTERLITE_URL}`.
-6. **Ask DCPS to allow the address** through the school web filter (the `github.io` address, or a custom address if you set one up; see below).
-7. **Run the Device Check on a DCPS computer.** Open the site, open `00 Device Check.ipynb`, and choose **Run > Run All Cells**. Every cell should print ✅.
-
-### Optional: a CodeVA web address
-
-To use an address such as `lab.codevirginia.org` instead of `github.io`, enter it under **Settings > Pages > Custom domain** and have whoever manages codevirginia.org add the DNS record GitHub shows. Do this before sending DCPS the address to allow.
-
-## Add or update course files
-
-Every change to the `content` folder republishes the site automatically within a few minutes.
-
-1. In GitHub, open the `content` folder, then the lesson folder (or create one: **Add file > Create new file**, type `Lesson 2.5/placeholder.txt`, commit, and delete the placeholder after uploading real files).
-2. Choose **Add file > Upload files**, drag in the notebooks and datasets, and choose **Commit changes**.
-
 **Guidelines**
 
 * **Put each lesson's dataset in the same folder as its notebook.** Then the notebook loads it by plain filename, for example `pd.read_csv('pokemon.csv')`. Never use Colab-style paths such as `/content/pokemon.csv`.
