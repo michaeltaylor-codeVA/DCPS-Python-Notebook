@@ -1,0 +1,13 @@
+name,type1,hp,speed,is_legendary
+Bulbasaur,grass,45,45,0
+Charmander,fire,39,65,0
+Squirtle,water,44,43,0
+Pikachu,electric,35,90,0
+Meowth,normal,40,90,0
+Psyduck,water,50,55,0
+Machop,fighting,70,35,0
+Geodude,rock,40,20,0
+Gastly,ghost,30,80,0
+Eevee,normal,55,55,0
+Mewtwo,psychic,106,140,1
+Chansey,normal,250,50,0
